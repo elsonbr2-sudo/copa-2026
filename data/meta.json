@@ -1,0 +1,19 @@
+{
+  "fetchedAt": "2026-06-19T15:32:59.838Z",
+  "competition": {
+    "id": 2000,
+    "name": "FIFA World Cup",
+    "code": "WC",
+    "type": "CUP",
+    "emblem": "https://crests.football-data.org/wm26.png"
+  },
+  "season": {
+    "id": 2398,
+    "startDate": "2026-06-11",
+    "endDate": "2026-07-19",
+    "currentMatchday": 1,
+    "winner": null
+  },
+  "totalMatches": 104,
+  "matchesPlayed": 28
+}

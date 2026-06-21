@@ -589,25 +589,6 @@
         {
           "position": 1,
           "team": {
-            "id": 801,
-            "name": "Saudi Arabia",
-            "shortName": "Saudi Arabia",
-            "tla": "KSA",
-            "crest": "https://crests.football-data.org/saudi_arabia.svg"
-          },
-          "playedGames": 2,
-          "form": null,
-          "won": 0,
-          "draw": 2,
-          "lost": 0,
-          "points": 2,
-          "goalsFor": 1,
-          "goalsAgainst": 1,
-          "goalDifference": 0
-        },
-        {
-          "position": 2,
-          "team": {
             "id": 760,
             "name": "Spain",
             "shortName": "Spain",
@@ -616,16 +597,16 @@
           },
           "playedGames": 2,
           "form": null,
-          "won": 0,
-          "draw": 2,
+          "won": 1,
+          "draw": 1,
           "lost": 0,
-          "points": 2,
-          "goalsFor": 0,
+          "points": 4,
+          "goalsFor": 4,
           "goalsAgainst": 0,
-          "goalDifference": 0
+          "goalDifference": 4
         },
         {
-          "position": 3,
+          "position": 2,
           "team": {
             "id": 758,
             "name": "Uruguay",
@@ -642,6 +623,25 @@
           "goalsFor": 1,
           "goalsAgainst": 1,
           "goalDifference": 0
+        },
+        {
+          "position": 3,
+          "team": {
+            "id": 801,
+            "name": "Saudi Arabia",
+            "shortName": "Saudi Arabia",
+            "tla": "KSA",
+            "crest": "https://crests.football-data.org/saudi_arabia.svg"
+          },
+          "playedGames": 2,
+          "form": null,
+          "won": 0,
+          "draw": 1,
+          "lost": 1,
+          "points": 1,
+          "goalsFor": 1,
+          "goalsAgainst": 5,
+          "goalDifference": -4
         },
         {
           "position": 4,

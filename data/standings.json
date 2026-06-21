@@ -608,24 +608,43 @@
         {
           "position": 2,
           "team": {
+            "id": 1930,
+            "name": "Cape Verde Islands",
+            "shortName": "Cape Verde",
+            "tla": "CPV",
+            "crest": "https://crests.football-data.org/cape_verde.svg"
+          },
+          "playedGames": 2,
+          "form": null,
+          "won": 1,
+          "draw": 1,
+          "lost": 0,
+          "points": 4,
+          "goalsFor": 1,
+          "goalsAgainst": 0,
+          "goalDifference": 1
+        },
+        {
+          "position": 3,
+          "team": {
             "id": 758,
             "name": "Uruguay",
             "shortName": "Uruguay",
             "tla": "URU",
             "crest": "https://crests.football-data.org/758.svg"
           },
-          "playedGames": 1,
+          "playedGames": 2,
           "form": null,
           "won": 0,
           "draw": 1,
-          "lost": 0,
+          "lost": 1,
           "points": 1,
           "goalsFor": 1,
-          "goalsAgainst": 1,
-          "goalDifference": 0
+          "goalsAgainst": 2,
+          "goalDifference": -1
         },
         {
-          "position": 3,
+          "position": 4,
           "team": {
             "id": 801,
             "name": "Saudi Arabia",
@@ -642,25 +661,6 @@
           "goalsFor": 1,
           "goalsAgainst": 5,
           "goalDifference": -4
-        },
-        {
-          "position": 4,
-          "team": {
-            "id": 1930,
-            "name": "Cape Verde Islands",
-            "shortName": "Cape Verde",
-            "tla": "CPV",
-            "crest": "https://crests.football-data.org/cape_verde.svg"
-          },
-          "playedGames": 1,
-          "form": null,
-          "won": 0,
-          "draw": 1,
-          "lost": 0,
-          "points": 1,
-          "goalsFor": 0,
-          "goalsAgainst": 0,
-          "goalDifference": 0
         }
       ]
     },

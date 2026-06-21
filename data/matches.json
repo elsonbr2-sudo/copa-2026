@@ -2531,11 +2531,11 @@
       },
       "id": 537372,
       "utcDate": "2026-06-21T22:00:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "matchday": 2,
       "stage": "GROUP_STAGE",
       "group": "GROUP_H",
-      "lastUpdated": "2026-06-20T15:20:13Z",
+      "lastUpdated": "2026-06-21T22:43:40Z",
       "homeTeam": {
         "id": 758,
         "name": "Uruguay",
@@ -2551,11 +2551,11 @@
         "crest": "https://crests.football-data.org/cape_verde.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 1
         },
         "halfTime": {
           "home": null,

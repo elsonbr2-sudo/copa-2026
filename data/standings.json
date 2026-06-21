@@ -384,12 +384,12 @@
             "tla": "ECU",
             "crest": "https://crests.football-data.org/791.svg"
           },
-          "playedGames": 1,
+          "playedGames": 2,
           "form": null,
           "won": 0,
-          "draw": 0,
+          "draw": 1,
           "lost": 1,
-          "points": 0,
+          "points": 1,
           "goalsFor": 0,
           "goalsAgainst": 1,
           "goalDifference": -1
@@ -403,12 +403,12 @@
             "tla": "CUW",
             "crest": "https://crests.football-data.org/curacao.svg"
           },
-          "playedGames": 1,
+          "playedGames": 2,
           "form": null,
           "won": 0,
-          "draw": 0,
+          "draw": 1,
           "lost": 1,
-          "points": 0,
+          "points": 1,
           "goalsFor": 1,
           "goalsAgainst": 7,
           "goalDifference": -6
@@ -442,6 +442,25 @@
         {
           "position": 2,
           "team": {
+            "id": 766,
+            "name": "Japan",
+            "shortName": "Japan",
+            "tla": "JPN",
+            "crest": "https://crests.football-data.org/766.svg"
+          },
+          "playedGames": 2,
+          "form": null,
+          "won": 1,
+          "draw": 1,
+          "lost": 0,
+          "points": 4,
+          "goalsFor": 4,
+          "goalsAgainst": 2,
+          "goalDifference": 2
+        },
+        {
+          "position": 3,
+          "team": {
             "id": 792,
             "name": "Sweden",
             "shortName": "Sweden",
@@ -459,25 +478,6 @@
           "goalDifference": 0
         },
         {
-          "position": 3,
-          "team": {
-            "id": 766,
-            "name": "Japan",
-            "shortName": "Japan",
-            "tla": "JPN",
-            "crest": "https://crests.football-data.org/766.svg"
-          },
-          "playedGames": 1,
-          "form": null,
-          "won": 0,
-          "draw": 1,
-          "lost": 0,
-          "points": 1,
-          "goalsFor": 2,
-          "goalsAgainst": 2,
-          "goalDifference": 0
-        },
-        {
           "position": 4,
           "team": {
             "id": 802,
@@ -486,15 +486,15 @@
             "tla": "TUN",
             "crest": "https://crests.football-data.org/tunisia.svg"
           },
-          "playedGames": 1,
+          "playedGames": 2,
           "form": null,
           "won": 0,
           "draw": 0,
-          "lost": 1,
+          "lost": 2,
           "points": 0,
           "goalsFor": 1,
-          "goalsAgainst": 5,
-          "goalDifference": -4
+          "goalsAgainst": 7,
+          "goalDifference": -6
         }
       ]
     },

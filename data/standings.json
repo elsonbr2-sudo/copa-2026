@@ -506,6 +506,44 @@
         {
           "position": 1,
           "team": {
+            "id": 840,
+            "name": "Iran",
+            "shortName": "Iran",
+            "tla": "IRN",
+            "crest": "https://crests.football-data.org/iran.svg"
+          },
+          "playedGames": 2,
+          "form": null,
+          "won": 0,
+          "draw": 2,
+          "lost": 0,
+          "points": 2,
+          "goalsFor": 2,
+          "goalsAgainst": 2,
+          "goalDifference": 0
+        },
+        {
+          "position": 2,
+          "team": {
+            "id": 805,
+            "name": "Belgium",
+            "shortName": "Belgium",
+            "tla": "BEL",
+            "crest": "https://crests.football-data.org/805.svg"
+          },
+          "playedGames": 2,
+          "form": null,
+          "won": 0,
+          "draw": 2,
+          "lost": 0,
+          "points": 2,
+          "goalsFor": 1,
+          "goalsAgainst": 1,
+          "goalDifference": 0
+        },
+        {
+          "position": 3,
+          "team": {
             "id": 783,
             "name": "New Zealand",
             "shortName": "New Zealand",
@@ -520,44 +558,6 @@
           "points": 1,
           "goalsFor": 2,
           "goalsAgainst": 2,
-          "goalDifference": 0
-        },
-        {
-          "position": 2,
-          "team": {
-            "id": 840,
-            "name": "Iran",
-            "shortName": "Iran",
-            "tla": "IRN",
-            "crest": "https://crests.football-data.org/iran.svg"
-          },
-          "playedGames": 1,
-          "form": null,
-          "won": 0,
-          "draw": 1,
-          "lost": 0,
-          "points": 1,
-          "goalsFor": 2,
-          "goalsAgainst": 2,
-          "goalDifference": 0
-        },
-        {
-          "position": 3,
-          "team": {
-            "id": 805,
-            "name": "Belgium",
-            "shortName": "Belgium",
-            "tla": "BEL",
-            "crest": "https://crests.football-data.org/805.svg"
-          },
-          "playedGames": 1,
-          "form": null,
-          "won": 0,
-          "draw": 1,
-          "lost": 0,
-          "points": 1,
-          "goalsFor": 1,
-          "goalsAgainst": 1,
           "goalDifference": 0
         },
         {

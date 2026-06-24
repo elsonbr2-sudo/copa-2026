@@ -91,6 +91,25 @@
         {
           "position": 1,
           "team": {
+            "id": 788,
+            "name": "Switzerland",
+            "shortName": "Switzerland",
+            "tla": "SUI",
+            "crest": "https://crests.football-data.org/788.svg"
+          },
+          "playedGames": 3,
+          "form": null,
+          "won": 2,
+          "draw": 1,
+          "lost": 0,
+          "points": 7,
+          "goalsFor": 7,
+          "goalsAgainst": 3,
+          "goalDifference": 4
+        },
+        {
+          "position": 2,
+          "team": {
             "id": 828,
             "name": "Canada",
             "shortName": "Canada",
@@ -100,31 +119,12 @@
           "playedGames": 3,
           "form": null,
           "won": 1,
-          "draw": 2,
-          "lost": 0,
-          "points": 5,
-          "goalsFor": 7,
-          "goalsAgainst": 1,
-          "goalDifference": 6
-        },
-        {
-          "position": 2,
-          "team": {
-            "id": 788,
-            "name": "Switzerland",
-            "shortName": "Switzerland",
-            "tla": "SUI",
-            "crest": "https://crests.football-data.org/788.svg"
-          },
-          "playedGames": 3,
-          "form": null,
-          "won": 1,
-          "draw": 2,
-          "lost": 0,
-          "points": 5,
-          "goalsFor": 5,
-          "goalsAgainst": 2,
-          "goalDifference": 3
+          "draw": 1,
+          "lost": 1,
+          "points": 4,
+          "goalsFor": 8,
+          "goalsAgainst": 3,
+          "goalDifference": 5
         },
         {
           "position": 3,
@@ -137,13 +137,13 @@
           },
           "playedGames": 3,
           "form": null,
-          "won": 0,
-          "draw": 2,
+          "won": 1,
+          "draw": 1,
           "lost": 1,
-          "points": 2,
-          "goalsFor": 2,
-          "goalsAgainst": 5,
-          "goalDifference": -3
+          "points": 4,
+          "goalsFor": 5,
+          "goalsAgainst": 6,
+          "goalDifference": -1
         },
         {
           "position": 4,
@@ -157,12 +157,12 @@
           "playedGames": 3,
           "form": null,
           "won": 0,
-          "draw": 2,
-          "lost": 1,
-          "points": 2,
-          "goalsFor": 1,
-          "goalsAgainst": 7,
-          "goalDifference": -6
+          "draw": 1,
+          "lost": 2,
+          "points": 1,
+          "goalsFor": 2,
+          "goalsAgainst": 10,
+          "goalDifference": -8
         }
       ]
     },

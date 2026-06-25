@@ -19,7 +19,45 @@
     todayMatches: document.getElementById("today-matches"),
     resultsList: document.getElementById("results-list"),
     standingsGrid: document.getElementById("standings-grid"),
+    knockoutBracket: document.getElementById("knockout-bracket"),
   };
+
+  // Estrutura oficial da fase de 32 avos da Copa 2026 (12 grupos, top 2 de cada
+  // + 8 melhores 3os colocados). Fonte: regulamento da FIFA / Wikipedia
+  // "2026 FIFA World Cup knockout stage". Os jogos 73-88 são, por definição,
+  // ordenados cronologicamente — por isso casamos este array (na mesma ordem)
+  // com os jogos LAST_32 da API ordenados por data, em vez de depender de IDs.
+  const R32_BRACKET = [
+    { id: 73, home: { kind: "runnerup", group: "A" }, away: { kind: "runnerup", group: "B" } },
+    { id: 74, home: { kind: "winner", group: "E" }, away: { kind: "best3", groups: ["A", "B", "C", "D", "F"] } },
+    { id: 75, home: { kind: "winner", group: "F" }, away: { kind: "runnerup", group: "C" } },
+    { id: 76, home: { kind: "winner", group: "C" }, away: { kind: "runnerup", group: "F" } },
+    { id: 77, home: { kind: "winner", group: "I" }, away: { kind: "best3", groups: ["C", "D", "F", "G", "H"] } },
+    { id: 78, home: { kind: "runnerup", group: "E" }, away: { kind: "runnerup", group: "I" } },
+    { id: 79, home: { kind: "winner", group: "A" }, away: { kind: "best3", groups: ["C", "E", "F", "H", "I"] } },
+    { id: 80, home: { kind: "winner", group: "L" }, away: { kind: "best3", groups: ["E", "H", "I", "J", "K"] } },
+    { id: 81, home: { kind: "winner", group: "D" }, away: { kind: "best3", groups: ["B", "E", "F", "I", "J"] } },
+    { id: 82, home: { kind: "winner", group: "G" }, away: { kind: "best3", groups: ["A", "E", "H", "I", "J"] } },
+    { id: 83, home: { kind: "runnerup", group: "K" }, away: { kind: "runnerup", group: "L" } },
+    { id: 84, home: { kind: "winner", group: "H" }, away: { kind: "runnerup", group: "J" } },
+    { id: 85, home: { kind: "winner", group: "B" }, away: { kind: "best3", groups: ["E", "F", "G", "I", "J"] } },
+    { id: 86, home: { kind: "winner", group: "J" }, away: { kind: "runnerup", group: "H" } },
+    { id: 87, home: { kind: "winner", group: "K" }, away: { kind: "best3", groups: ["D", "E", "I", "J", "L"] } },
+    { id: 88, home: { kind: "runnerup", group: "D" }, away: { kind: "runnerup", group: "G" } },
+  ];
+
+  // Numeração oficial FIFA para as fases seguintes
+  const KNOCKOUT_IDS = {
+    r16:   [89, 90, 91, 92, 93, 94, 95, 96],
+    qf:    [97, 98, 99, 100],
+    sf:    [101, 102],
+    third: 103,
+    final: 104,
+  };
+  // Jogos que alimentam cada slot (ordem = mesma do R32_BRACKET)
+  const R16_FEEDERS = [[73,74],[75,76],[77,78],[79,80],[81,82],[83,84],[85,86],[87,88]];
+  const QF_FEEDERS  = [[89,90],[91,92],[93,94],[95,96]];
+  const SF_FEEDERS  = [[97,98],[99,100]];
 
   const STATUS_LABELS = {
     SCHEDULED: "Agendado",
@@ -276,12 +314,250 @@
     `).join("");
   }
 
+  // ---------- Render: Próxima fase (chaveamento 32 avos) ----------
+
+  function groupLetterFromMatch(raw) {
+    return raw ? raw.replace("GROUP_", "") : null;
+  }
+
+  function groupLetterFromStandings(raw) {
+    return raw ? raw.replace("Group ", "").trim() : null;
+  }
+
+  function standingsTableFor(letter) {
+    const entry = state.standings.find((s) => groupLetterFromStandings(s.group) === letter);
+    return entry?.table ?? null;
+  }
+
+  function slotLabel(slotRef) {
+    if (slotRef.kind === "winner") return `1º Grupo ${slotRef.group}`;
+    if (slotRef.kind === "runnerup") return `2º Grupo ${slotRef.group}`;
+    return `Melhor 3º (${slotRef.groups.join("/")})`;
+  }
+
+  function slotLabelShort(slotRef) {
+    if (slotRef.kind === "winner")   return `1º Gr.${slotRef.group}`;
+    if (slotRef.kind === "runnerup") return `2º Gr.${slotRef.group}`;
+    return `3º ${slotRef.groups.join("/")}`;
+  }
+
+  // Para um grupo ainda em andamento, simula todos os resultados possíveis dos
+  // jogos restantes (vitória casa/empate/vitória fora) e retorna, para a
+  // posição pedida (1=1º, 2=2º...), todos os times que ainda podem terminar
+  // ali em pelo menos um cenário. Empates em pontos são tratados como "ambos
+  // possíveis" para aquela posição, já que o saldo de gols dos jogos futuros
+  // ainda não é conhecido.
+  function candidatesForGroupPosition(letter, position, table) {
+    const teams = table.map((r) => ({ id: r.team.id, team: r.team, points: r.points }));
+    const groupMatches = state.matches.filter(
+      (m) => m.stage === "GROUP_STAGE" && groupLetterFromMatch(m.group) === letter
+    );
+    const remaining = groupMatches.filter(
+      (m) => !["FINISHED", "AWARDED"].includes(m.status) && m.homeTeam?.id && m.awayTeam?.id
+    );
+    const n = remaining.length;
+    const possiblePositions = new Map(teams.map((t) => [t.id, new Set()]));
+
+    if (n === 0 || n > 8) {
+      table.forEach((r) => possiblePositions.get(r.team.id)?.add(r.position));
+    } else {
+      const outcomes = [
+        [3, 0],
+        [1, 1],
+        [0, 3],
+      ];
+      const totalCombos = 3 ** n;
+      for (let combo = 0; combo < totalCombos; combo++) {
+        const pts = new Map(teams.map((t) => [t.id, t.points]));
+        let c = combo;
+        for (let i = 0; i < n; i++) {
+          const outcomeIdx = c % 3;
+          c = Math.floor(c / 3);
+          const [hp, ap] = outcomes[outcomeIdx];
+          const m = remaining[i];
+          pts.set(m.homeTeam.id, (pts.get(m.homeTeam.id) ?? 0) + hp);
+          pts.set(m.awayTeam.id, (pts.get(m.awayTeam.id) ?? 0) + ap);
+        }
+        const sorted = [...teams].sort((a, b) => pts.get(b.id) - pts.get(a.id));
+        let i = 0;
+        while (i < sorted.length) {
+          let j = i;
+          while (j + 1 < sorted.length && pts.get(sorted[j + 1].id) === pts.get(sorted[i].id)) j++;
+          for (let k = i; k <= j; k++) {
+            for (let pos = i + 1; pos <= j + 1; pos++) possiblePositions.get(sorted[k].id).add(pos);
+          }
+          i = j + 1;
+        }
+      }
+    }
+
+    return teams.filter((t) => possiblePositions.get(t.id).has(position)).map((t) => t.team);
+  }
+
+  function resolveSide(slotRef, apiTeam) {
+    const label = slotLabel(slotRef);
+
+    if (apiTeam && apiTeam.id) {
+      return { state: "defined", label, team: apiTeam };
+    }
+
+    if (slotRef.kind === "best3") {
+      const candidates = slotRef.groups
+        .map((g) => {
+          const table = standingsTableFor(g);
+          const row = table?.find((r) => r.position === 3);
+          if (!row?.team) return null;
+          return {
+            code: row.team.tla || g,
+            crest: row.team.crest,
+            title: `${row.team.name} — 3º colocado do Grupo ${g}`,
+          };
+        })
+        .filter(Boolean);
+      return { state: "pending", label, candidates };
+    }
+
+    const position = slotRef.kind === "winner" ? 1 : 2;
+    const table = standingsTableFor(slotRef.group);
+    if (!table) return { state: "pending", label, candidates: [] };
+
+    const finished = table.every((r) => r.playedGames === table.length - 1);
+    if (finished) {
+      const row = table.find((r) => r.position === position);
+      return { state: "defined", label, team: row.team };
+    }
+
+    const candidateTeams = candidatesForGroupPosition(slotRef.group, position, table);
+    if (candidateTeams.length === 1) {
+      return { state: "defined", label, team: candidateTeams[0] };
+    }
+
+    return {
+      state: "pending",
+      label,
+      candidates: candidateTeams.map((t) => ({
+        code: t.tla,
+        crest: t.crest,
+        title: `${t.name} — ainda em disputa`,
+      })),
+    };
+  }
+
+  function renderBtSlot(resolved, slotRef) {
+    if (resolved.state === "defined") {
+      const t = resolved.team;
+      const img = t.crest ? `<img class="bt-crest" src="${t.crest}" alt="" loading="lazy">` : "";
+      return `<div class="bt-slot bt-slot--defined">${img}<span class="bt-name">${t.tla || t.shortName || t.name}</span></div>`;
+    }
+    const shown = resolved.candidates.slice(0, 4);
+    const extra = resolved.candidates.length - shown.length;
+    const chips = shown.map((c) => {
+      const img = c.crest ? `<img src="${c.crest}" alt="">` : "";
+      return `<span class="bt-chip" title="${c.title}">${img}<span>${c.code}</span></span>`;
+    }).join("");
+    const moreChip = extra > 0 ? `<span class="bt-chip bt-chip--more">+${extra}</span>` : "";
+    return `<div class="bt-slot bt-slot--pending"><span class="bt-slot-label">${slotLabelShort(slotRef)}</span><div class="bt-chips">${chips || `<span class="bt-chip bt-chip--unknown">?</span>`}${moreChip}</div></div>`;
+  }
+
+  function renderBtFeederSlot(gameId) {
+    return `<div class="bt-slot bt-slot--feeder"><span class="bt-feeder">V M${gameId}</span></div>`;
+  }
+
+  function fmtBtDate(utcDate) {
+    if (!utcDate) return "A definir";
+    const d = new Date(utcDate);
+    const date = new Intl.DateTimeFormat("pt-BR", { timeZone: TIMEZONE, day: "2-digit", month: "2-digit" }).format(d);
+    return `${date} · ${formatKickoffTime(utcDate)}`;
+  }
+
+  function renderBtNode(gameId, utcDate, homeHtml, awayHtml) {
+    return `<div class="bt-node"><article class="bt-card"><div class="bt-meta">M${gameId} · ${fmtBtDate(utcDate)}</div>${homeHtml}<div class="bt-vs" aria-hidden="true"></div>${awayHtml}</article></div>`;
+  }
+
+  function renderKnockout() {
+    if (!els.knockoutBracket) return;
+
+    if (state.standings.length === 0 || state.matches.length === 0) {
+      els.knockoutBracket.innerHTML = `<p class="empty-state">Carregando chaveamento…</p>`;
+      return;
+    }
+
+    const byStage = (s) => state.matches.filter((m) => m.stage === s).sort((a, b) => new Date(a.utcDate) - new Date(b.utcDate));
+    const last32 = byStage("LAST_32");
+    const last16 = byStage("LAST_16");
+    const qfs    = byStage("QUARTER_FINALS");
+    const sfs    = byStage("SEMI_FINALS");
+    const finals = byStage("FINAL");
+
+    if (last32.length !== 16) {
+      els.knockoutBracket.innerHTML = `<p class="empty-state">O chaveamento ainda não está disponível.</p>`;
+      return;
+    }
+
+    const ids = KNOCKOUT_IDS;
+
+    function r32Node(idx) {
+      const slot = R32_BRACKET[idx];
+      const api  = last32[idx];
+      const home = resolveSide(slot.home, api.homeTeam);
+      const away = resolveSide(slot.away, api.awayTeam);
+      return renderBtNode(slot.id, api.utcDate, renderBtSlot(home, slot.home), renderBtSlot(away, slot.away));
+    }
+
+    function fNode(gameId, utcDate, fa, fb) {
+      return renderBtNode(gameId, utcDate, renderBtFeederSlot(fa), renderBtFeederSlot(fb));
+    }
+
+    const p = (...nodes) => `<div class="bt-pair">${nodes.join("")}</div>`;
+
+    const colL_r32 = [p(r32Node(0),r32Node(1)), p(r32Node(2),r32Node(3)), p(r32Node(4),r32Node(5)), p(r32Node(6),r32Node(7))].join("");
+    const colR_r32 = [p(r32Node(8),r32Node(9)), p(r32Node(10),r32Node(11)), p(r32Node(12),r32Node(13)), p(r32Node(14),r32Node(15))].join("");
+
+    const colL_r16 = [
+      p(fNode(ids.r16[0], last16[0]?.utcDate, 73, 74), fNode(ids.r16[1], last16[1]?.utcDate, 75, 76)),
+      p(fNode(ids.r16[2], last16[2]?.utcDate, 77, 78), fNode(ids.r16[3], last16[3]?.utcDate, 79, 80)),
+    ].join("");
+    const colR_r16 = [
+      p(fNode(ids.r16[4], last16[4]?.utcDate, 81, 82), fNode(ids.r16[5], last16[5]?.utcDate, 83, 84)),
+      p(fNode(ids.r16[6], last16[6]?.utcDate, 85, 86), fNode(ids.r16[7], last16[7]?.utcDate, 87, 88)),
+    ].join("");
+
+    const colL_qf = p(fNode(ids.qf[0], qfs[0]?.utcDate, 89, 90), fNode(ids.qf[1], qfs[1]?.utcDate, 91, 92));
+    const colR_qf = p(fNode(ids.qf[2], qfs[2]?.utcDate, 93, 94), fNode(ids.qf[3], qfs[3]?.utcDate, 95, 96));
+
+    const colL_sf  = renderBtNode(ids.sf[0],  sfs[0]?.utcDate,    renderBtFeederSlot(97),  renderBtFeederSlot(98));
+    const colR_sf  = renderBtNode(ids.sf[1],  sfs[1]?.utcDate,    renderBtFeederSlot(99),  renderBtFeederSlot(100));
+    const colFinal = renderBtNode(ids.final,  finals[0]?.utcDate, renderBtFeederSlot(101), renderBtFeederSlot(102));
+
+    els.knockoutBracket.innerHTML = `
+      <div class="bracket-tree">
+        <div class="bt-stages">
+          <span>32 avos</span><span>16 avos</span><span>Quartas</span><span>Semis</span>
+          <span class="is-final">Final</span>
+          <span>Semis</span><span>Quartas</span><span>16 avos</span><span>32 avos</span>
+        </div>
+        <div class="bt-body">
+          <div class="bt-col" data-round="r32" data-side="left">${colL_r32}</div>
+          <div class="bt-col" data-round="r16" data-side="left">${colL_r16}</div>
+          <div class="bt-col" data-round="qf"  data-side="left">${colL_qf}</div>
+          <div class="bt-col" data-round="sf"  data-side="left">${colL_sf}</div>
+          <div class="bt-col" data-round="final">${colFinal}</div>
+          <div class="bt-col" data-round="sf"  data-side="right">${colR_sf}</div>
+          <div class="bt-col" data-round="qf"  data-side="right">${colR_qf}</div>
+          <div class="bt-col" data-round="r16" data-side="right">${colR_r16}</div>
+          <div class="bt-col" data-round="r32" data-side="right">${colR_r32}</div>
+        </div>
+      </div>
+    `;
+  }
+
   // ---------- Render geral ----------
 
   function renderAll() {
     renderToday();
     renderResults();
     renderStandings();
+    renderKnockout();
   }
 
   // ---------- Carregamento de dados ----------
@@ -331,6 +607,7 @@
           panel.classList.toggle("is-hidden", !isTarget);
           panel.hidden = !isTarget;
         });
+
       });
     });
   }

@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="styles.css?v=5" />
 </head>
 <body>
 
@@ -44,6 +44,10 @@
     <button class="tab" role="tab" id="tab-btn-standings" aria-controls="tab-standings" aria-selected="false" data-tab="standings">
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19V5M4 19h16M9 19v-7M14 19V9M19 19v-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       Classificação
+    </button>
+    <button class="tab" role="tab" id="tab-btn-knockout" aria-controls="tab-knockout" aria-selected="false" data-tab="knockout">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="4.5" cy="6" r="2" stroke="currentColor" stroke-width="1.6"/><circle cx="4.5" cy="18" r="2" stroke="currentColor" stroke-width="1.6"/><circle cx="19.5" cy="12" r="2" stroke="currentColor" stroke-width="1.6"/><path d="M6.5 6h4a2 2 0 0 1 2 2v8a2 2 0 0 0 2 2M17.5 12h-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      Próxima Fase
     </button>
   </nav>
 </header>
@@ -82,12 +86,25 @@
     </div>
   </section>
 
+  <section id="tab-knockout" class="panel is-hidden" role="tabpanel" aria-labelledby="tab-btn-knockout" hidden>
+    <div class="panel-heading">
+      <h2>Próxima fase — 32 avos de final</h2>
+      <p class="panel-heading__hint">
+        <span class="legend-dot legend-dot--qualified"></span> Time já definido
+        <span class="legend-dot legend-dot--pending"></span> Possíveis adversários
+      </p>
+    </div>
+    <div id="knockout-bracket" class="bracket-grid" aria-live="polite">
+      <p class="empty-state">Carregando chaveamento…</p>
+    </div>
+  </section>
+
 </main>
 
 <footer class="site-footer">
   <p>Dados fornecidos por <a href="https://www.football-data.org/" target="_blank" rel="noopener noreferrer">football-data.org</a>. Atualizado periodicamente via GitHub Actions.</p>
 </footer>
 
-<script src="app.js"></script>
+<script src="app.js?v=3"></script>
 </body>
 </html>

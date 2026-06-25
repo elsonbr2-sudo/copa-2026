@@ -587,6 +587,263 @@ main {
   background: var(--green);
 }
 
+.legend-dot--pending {
+  background: var(--gold);
+  margin-left: 10px;
+}
+
+/* ---------- Próxima fase (chaveamento 32 avos) ---------- */
+
+#tab-knockout.panel:not(.is-hidden) {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+#tab-knockout .panel-heading {
+  flex-shrink: 0;
+}
+
+/* Bracket container */
+#knockout-bracket {
+  overflow-x: auto;
+}
+
+/* Bracket tree */
+.bracket-tree {
+  display: flex;
+  flex-direction: column;
+  height: 660px;
+  min-width: 860px;
+}
+
+.bt-stages {
+  display: flex;
+  flex-shrink: 0;
+  padding-bottom: 4px;
+}
+
+.bt-stages span {
+  flex: 9;
+  text-align: center;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: var(--text-faint);
+}
+.bt-stages span[class="is-final"] {
+  flex: 7;
+  color: var(--gold);
+}
+/* mirror column widths for stage labels */
+.bt-stages span:nth-child(2),
+.bt-stages span:nth-child(8) { flex: 7; }
+.bt-stages span:nth-child(3),
+.bt-stages span:nth-child(7) { flex: 5.5; }
+.bt-stages span:nth-child(4),
+.bt-stages span:nth-child(6) { flex: 5; }
+.bt-stages span:nth-child(5)  { flex: 7; }
+
+/* Bracket body */
+.bt-body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  align-items: stretch;
+}
+
+/* Round columns */
+.bt-col {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 0;
+}
+.bt-col[data-round="r32"]   { flex: 9; }
+.bt-col[data-round="r16"]   { flex: 7; }
+.bt-col[data-round="qf"]    { flex: 5.5; }
+.bt-col[data-round="sf"]    { flex: 5; justify-content: center; }
+.bt-col[data-round="final"] { flex: 7; justify-content: center; }
+
+/* Pair: groups 2 nodes, provides the vertical bracket arm */
+.bt-pair {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  position: relative;
+}
+
+/* Vertical bracket arm connecting the two siblings */
+.bt-col[data-side="left"] .bt-pair::after,
+.bt-col[data-side="right"] .bt-pair::after {
+  content: "";
+  position: absolute;
+  top: 25%;
+  bottom: 25%;
+  width: 1px;
+  background: var(--border);
+}
+.bt-col[data-side="left"]  .bt-pair::after { right: 0; }
+.bt-col[data-side="right"] .bt-pair::after { left: 0; }
+
+/* Match nodes */
+.bt-node {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 2px 0;
+}
+
+/* SF and Final nodes don't stretch (centered in column) */
+.bt-col[data-round="sf"]    .bt-node,
+.bt-col[data-round="final"] .bt-node { flex: 0; }
+
+/* Outbound horizontal stub (toward next round) */
+.bt-col[data-side="left"]  .bt-node::after,
+.bt-col[data-side="right"] .bt-node::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1px);
+  height: 1px;
+  width: 6px;
+  background: var(--border);
+}
+.bt-col[data-side="left"]  .bt-node::after { right: 0; }
+.bt-col[data-side="right"] .bt-node::after { left: 0; }
+
+/* Inbound horizontal stub (from previous round) — R16, QF, SF only */
+.bt-col[data-side="left"]:not([data-round="r32"])  .bt-node::before,
+.bt-col[data-side="right"]:not([data-round="r32"]) .bt-node::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1px);
+  height: 1px;
+  width: 6px;
+  background: var(--border);
+}
+.bt-col[data-side="left"]:not([data-round="r32"])  .bt-node::before { left: 0; }
+.bt-col[data-side="right"]:not([data-round="r32"]) .bt-node::before { right: 0; }
+
+/* Match card */
+.bt-card {
+  flex: 1;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 4px 7px;
+  margin: 2px 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.bt-col[data-round="final"] .bt-card {
+  border-color: var(--gold);
+  background: rgba(251, 191, 36, 0.06);
+  margin: 2px 8px;
+}
+
+/* Meta line: M73 · 28/06 · 14h */
+.bt-meta {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--text-faint);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bt-col[data-round="final"] .bt-meta { color: var(--gold); }
+
+/* Thin divider between home and away slots */
+.bt-vs {
+  height: 1px;
+  background: var(--border-soft);
+  margin: 1px 0;
+  flex-shrink: 0;
+}
+
+/* Slots */
+.bt-slot { display: flex; align-items: center; gap: 4px; min-width: 0; }
+
+.bt-slot--pending {
+  flex-wrap: nowrap;
+  overflow: hidden;
+  gap: 3px;
+}
+
+.bt-slot--feeder {
+  min-height: 16px;
+}
+
+.bt-slot-label {
+  font-size: 9px;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+.bt-slot--defined .bt-name {
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bt-feeder {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.bt-col[data-round="sf"]    .bt-feeder { font-size: 12px; }
+.bt-col[data-round="final"] .bt-feeder { font-size: 13px; color: var(--text); }
+
+.bt-crest {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Candidate chips */
+.bt-chips {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.bt-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  padding: 1px 5px 1px 3px;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.bt-chip img {
+  width: 11px;
+  height: 11px;
+  object-fit: contain;
+}
+.bt-chip--unknown { padding: 1px 6px; color: var(--text-faint); }
+.bt-chip--more    { color: var(--gold); background: transparent; border-color: transparent; padding: 1px 4px; }
+
+/* Mobile: bracket scrolls horizontally (já tratado com min-width no .bracket-tree) */
+
 /* ---------- Footer ---------- */
 
 .site-footer {

@@ -1875,7 +1875,7 @@
       "matchday": 2,
       "stage": "GROUP_STAGE",
       "group": "GROUP_D",
-      "lastUpdated": "2026-06-20T08:25:01Z",
+      "lastUpdated": "2026-06-20T08:25:00Z",
       "homeTeam": {
         "id": 771,
         "name": "United States",
@@ -3309,11 +3309,11 @@
       },
       "id": 537344,
       "utcDate": "2026-06-24T22:00:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "matchday": 3,
       "stage": "GROUP_STAGE",
       "group": "GROUP_C",
-      "lastUpdated": "2026-06-24T23:49:31Z",
+      "lastUpdated": "2026-06-25T00:07:44Z",
       "homeTeam": {
         "id": 815,
         "name": "Morocco",
@@ -3332,7 +3332,7 @@
         "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 3,
+          "home": 4,
           "away": 2
         },
         "halfTime": {
@@ -3375,11 +3375,11 @@
       },
       "id": 537343,
       "utcDate": "2026-06-24T22:00:00Z",
-      "status": "PAUSED",
+      "status": "FINISHED",
       "matchday": 3,
       "stage": "GROUP_STAGE",
       "group": "GROUP_C",
-      "lastUpdated": "2026-06-24T23:49:12Z",
+      "lastUpdated": "2026-06-25T00:07:44Z",
       "homeTeam": {
         "id": 8873,
         "name": "Scotland",
@@ -3441,11 +3441,11 @@
       },
       "id": 537331,
       "utcDate": "2026-06-25T01:00:00Z",
-      "status": "TIMED",
+      "status": "PAUSED",
       "matchday": 3,
       "stage": "GROUP_STAGE",
       "group": "GROUP_A",
-      "lastUpdated": "2026-06-16T15:20:15Z",
+      "lastUpdated": "2026-06-25T01:57:05Z",
       "homeTeam": {
         "id": 798,
         "name": "Czechia",
@@ -3461,15 +3461,15 @@
         "crest": "https://crests.football-data.org/769.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         }
       },
       "odds": {
@@ -3507,11 +3507,11 @@
       },
       "id": 537332,
       "utcDate": "2026-06-25T01:00:00Z",
-      "status": "TIMED",
+      "status": "PAUSED",
       "matchday": 3,
       "stage": "GROUP_STAGE",
       "group": "GROUP_A",
-      "lastUpdated": "2026-06-16T15:20:15Z",
+      "lastUpdated": "2026-06-25T01:56:44Z",
       "homeTeam": {
         "id": 774,
         "name": "South Africa",
@@ -3527,15 +3527,15 @@
         "crest": "https://crests.football-data.org/772.png"
       },
       "score": {
-        "winner": null,
+        "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         }
       },
       "odds": {

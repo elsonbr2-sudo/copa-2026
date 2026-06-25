@@ -346,14 +346,14 @@
             "tla": "GER",
             "crest": "https://crests.football-data.org/759.svg"
           },
-          "playedGames": 2,
+          "playedGames": 3,
           "form": null,
           "won": 2,
-          "draw": 0,
+          "draw": 1,
           "lost": 0,
-          "points": 6,
-          "goalsFor": 9,
-          "goalsAgainst": 2,
+          "points": 7,
+          "goalsFor": 10,
+          "goalsAgainst": 3,
           "goalDifference": 7
         },
         {
@@ -365,15 +365,15 @@
             "tla": "CIV",
             "crest": "https://crests.football-data.org/787.svg"
           },
-          "playedGames": 2,
+          "playedGames": 3,
           "form": null,
-          "won": 1,
+          "won": 2,
           "draw": 0,
           "lost": 1,
-          "points": 3,
-          "goalsFor": 2,
+          "points": 6,
+          "goalsFor": 3,
           "goalsAgainst": 2,
-          "goalDifference": 0
+          "goalDifference": 1
         },
         {
           "position": 3,
@@ -384,14 +384,14 @@
             "tla": "ECU",
             "crest": "https://crests.football-data.org/791.svg"
           },
-          "playedGames": 2,
+          "playedGames": 3,
           "form": null,
           "won": 0,
-          "draw": 1,
+          "draw": 2,
           "lost": 1,
-          "points": 1,
-          "goalsFor": 0,
-          "goalsAgainst": 1,
+          "points": 2,
+          "goalsFor": 1,
+          "goalsAgainst": 2,
           "goalDifference": -1
         },
         {
@@ -403,15 +403,15 @@
             "tla": "CUW",
             "crest": "https://crests.football-data.org/curacao.svg"
           },
-          "playedGames": 2,
+          "playedGames": 3,
           "form": null,
           "won": 0,
           "draw": 1,
-          "lost": 1,
+          "lost": 2,
           "points": 1,
           "goalsFor": 1,
-          "goalsAgainst": 7,
-          "goalDifference": -6
+          "goalsAgainst": 8,
+          "goalDifference": -7
         }
       ]
     },

@@ -16,16 +16,35 @@
           },
           "playedGames": 3,
           "form": null,
-          "won": 2,
-          "draw": 1,
+          "won": 3,
+          "draw": 0,
           "lost": 0,
-          "points": 7,
-          "goalsFor": 3,
+          "points": 9,
+          "goalsFor": 6,
           "goalsAgainst": 0,
-          "goalDifference": 3
+          "goalDifference": 6
         },
         {
           "position": 2,
+          "team": {
+            "id": 774,
+            "name": "South Africa",
+            "shortName": "South Africa",
+            "tla": "RSA",
+            "crest": "https://crests.football-data.org/9396.svg"
+          },
+          "playedGames": 3,
+          "form": null,
+          "won": 1,
+          "draw": 1,
+          "lost": 1,
+          "points": 4,
+          "goalsFor": 2,
+          "goalsAgainst": 3,
+          "goalDifference": -1
+        },
+        {
+          "position": 3,
           "team": {
             "id": 772,
             "name": "South Korea",
@@ -36,15 +55,15 @@
           "playedGames": 3,
           "form": null,
           "won": 1,
-          "draw": 1,
-          "lost": 1,
-          "points": 4,
+          "draw": 0,
+          "lost": 2,
+          "points": 3,
           "goalsFor": 2,
-          "goalsAgainst": 2,
-          "goalDifference": 0
+          "goalsAgainst": 3,
+          "goalDifference": -1
         },
         {
-          "position": 3,
+          "position": 4,
           "team": {
             "id": 798,
             "name": "Czechia",
@@ -55,31 +74,12 @@
           "playedGames": 3,
           "form": null,
           "won": 0,
-          "draw": 2,
-          "lost": 1,
-          "points": 2,
+          "draw": 1,
+          "lost": 2,
+          "points": 1,
           "goalsFor": 2,
-          "goalsAgainst": 3,
-          "goalDifference": -1
-        },
-        {
-          "position": 4,
-          "team": {
-            "id": 774,
-            "name": "South Africa",
-            "shortName": "South Africa",
-            "tla": "RSA",
-            "crest": "https://crests.football-data.org/9396.svg"
-          },
-          "playedGames": 3,
-          "form": null,
-          "won": 0,
-          "draw": 2,
-          "lost": 1,
-          "points": 2,
-          "goalsFor": 1,
-          "goalsAgainst": 3,
-          "goalDifference": -2
+          "goalsAgainst": 6,
+          "goalDifference": -4
         }
       ]
     },

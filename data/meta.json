@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-26T20:07:04.707Z",
+  "fetchedAt": "2026-06-26T21:39:52.784Z",
   "competition": {
     "id": 2000,
     "name": "FIFA World Cup",
@@ -11,9 +11,9 @@
     "id": 2398,
     "startDate": "2026-06-11",
     "endDate": "2026-07-19",
-    "currentMatchday": 2,
+    "currentMatchday": 3,
     "winner": null
   },
   "totalMatches": 104,
-  "matchesPlayed": 60
+  "matchesPlayed": 62
 }

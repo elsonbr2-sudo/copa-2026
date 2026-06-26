@@ -23,10 +23,9 @@
   };
 
   // Estrutura oficial da fase de 32 avos da Copa 2026 (12 grupos, top 2 de cada
-  // + 8 melhores 3os colocados). Fonte: regulamento da FIFA / Wikipedia
-  // "2026 FIFA World Cup knockout stage". Os jogos 73-88 são, por definição,
-  // ordenados cronologicamente — por isso casamos este array (na mesma ordem)
-  // com os jogos LAST_32 da API ordenados por data, em vez de depender de IDs.
+  // + 8 melhores 3os colocados). Fonte: Wikipedia "2026 FIFA World Cup knockout stage".
+  // ATENÇÃO: os IDs FIFA (M73-M88) NÃO seguem ordem cronológica — o mapeamento
+  // correto está em R32_BRACKET_TO_LAST32_IDX.
   const R32_BRACKET = [
     { id: 73, home: { kind: "runnerup", group: "A" }, away: { kind: "runnerup", group: "B" } },
     { id: 74, home: { kind: "winner", group: "E" }, away: { kind: "best3", groups: ["A", "B", "C", "D", "F"] } },
@@ -45,6 +44,11 @@
     { id: 87, home: { kind: "winner", group: "K" }, away: { kind: "best3", groups: ["D", "E", "I", "J", "L"] } },
     { id: 88, home: { kind: "runnerup", group: "D" }, away: { kind: "runnerup", group: "G" } },
   ];
+
+  // Mapeamento R32_BRACKET[i] → índice em last32[] (ordenado por utcDate).
+  // Necessário porque os IDs oficiais FIFA (M73-M88) NÃO seguem ordem cronológica.
+  // Fonte: Wikipedia "2026 FIFA World Cup knockout stage" + horários confirmados.
+  const R32_BRACKET_TO_LAST32_IDX = [0, 2, 3, 1, 5, 4, 6, 7, 9, 8, 11, 10, 12, 14, 15, 13];
 
   // Numeração oficial FIFA para as fases seguintes
   const KNOCKOUT_IDS = {
@@ -467,7 +471,7 @@
     if (!utcDate) return "A definir";
     const d = new Date(utcDate);
     const date = new Intl.DateTimeFormat("pt-BR", { timeZone: TIMEZONE, day: "2-digit", month: "2-digit" }).format(d);
-    return `${date} · ${formatKickoffTime(utcDate)}`;
+    return `${date} · ${formatKickoffTime(utcDate)} (BRT)`;
   }
 
   function renderBtNode(gameId, utcDate, homeHtml, awayHtml) {
@@ -498,7 +502,7 @@
 
     function r32Node(idx) {
       const slot = R32_BRACKET[idx];
-      const api  = last32[idx];
+      const api  = last32[R32_BRACKET_TO_LAST32_IDX[idx]];
       const home = resolveSide(slot.home, api.homeTeam);
       const away = resolveSide(slot.away, api.awayTeam);
       return renderBtNode(slot.id, api.utcDate, renderBtSlot(home, slot.home), renderBtSlot(away, slot.away));

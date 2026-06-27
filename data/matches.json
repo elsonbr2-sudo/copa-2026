@@ -4399,7 +4399,14 @@
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": []
+      "referees": [
+        {
+          "id": 236084,
+          "name": "Abdulrahman Al Jassim",
+          "type": "REFEREE",
+          "nationality": "Qatar"
+        }
+      ]
     },
     {
       "area": {
@@ -4458,7 +4465,14 @@
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": []
+      "referees": [
+        {
+          "id": 77052,
+          "name": "Drew Fischer",
+          "type": "REFEREE",
+          "nationality": "Canada"
+        }
+      ]
     },
     {
       "area": {

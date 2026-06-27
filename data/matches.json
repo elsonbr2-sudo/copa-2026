@@ -4369,7 +4369,7 @@
       "matchday": 3,
       "stage": "GROUP_STAGE",
       "group": "GROUP_L",
-      "lastUpdated": "2026-06-27T21:17:51Z",
+      "lastUpdated": "2026-06-27T22:33:02Z",
       "homeTeam": {
         "id": 1836,
         "name": "Panama",
@@ -4385,15 +4385,15 @@
         "crest": "https://crests.football-data.org/770.svg"
       },
       "score": {
-        "winner": "DRAW",
+        "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
           "home": 0,
-          "away": 0
+          "away": 2
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         }
       },
       "odds": {
@@ -4431,11 +4431,11 @@
       },
       "id": 537414,
       "utcDate": "2026-06-27T21:00:00Z",
-      "status": "LIVE",
+      "status": "IN_PLAY",
       "matchday": 3,
       "stage": "GROUP_STAGE",
       "group": "GROUP_L",
-      "lastUpdated": "2026-06-27T21:18:18Z",
+      "lastUpdated": "2026-06-27T22:33:33Z",
       "homeTeam": {
         "id": 799,
         "name": "Croatia",
@@ -4451,15 +4451,15 @@
         "crest": "https://crests.football-data.org/ghana.svg"
       },
       "score": {
-        "winner": "DRAW",
+        "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 0,
+          "home": 1,
           "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 0
         }
       },
       "odds": {
@@ -4531,7 +4531,14 @@
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": []
+      "referees": [
+        {
+          "id": 55970,
+          "name": "Alireza Faghani",
+          "type": "REFEREE",
+          "nationality": "Iran"
+        }
+      ]
     },
     {
       "area": {
@@ -4590,7 +4597,14 @@
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": []
+      "referees": [
+        {
+          "id": 43878,
+          "name": "Felix Zwayer",
+          "type": "REFEREE",
+          "nationality": "Germany"
+        }
+      ]
     },
     {
       "area": {

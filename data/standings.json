@@ -595,12 +595,12 @@
             "tla": "ESP",
             "crest": "https://crests.football-data.org/760.svg"
           },
-          "playedGames": 2,
+          "playedGames": 3,
           "form": null,
           "won": 1,
-          "draw": 1,
+          "draw": 2,
           "lost": 0,
-          "points": 4,
+          "points": 5,
           "goalsFor": 4,
           "goalsAgainst": 0,
           "goalDifference": 4
@@ -614,12 +614,12 @@
             "tla": "URU",
             "crest": "https://crests.football-data.org/758.svg"
           },
-          "playedGames": 2,
+          "playedGames": 3,
           "form": null,
           "won": 0,
-          "draw": 2,
+          "draw": 3,
           "lost": 0,
-          "points": 2,
+          "points": 3,
           "goalsFor": 3,
           "goalsAgainst": 3,
           "goalDifference": 0
@@ -633,12 +633,12 @@
             "tla": "CPV",
             "crest": "https://crests.football-data.org/cape_verde.svg"
           },
-          "playedGames": 2,
+          "playedGames": 3,
           "form": null,
           "won": 0,
-          "draw": 2,
+          "draw": 3,
           "lost": 0,
-          "points": 2,
+          "points": 3,
           "goalsFor": 2,
           "goalsAgainst": 2,
           "goalDifference": 0
@@ -652,12 +652,12 @@
             "tla": "KSA",
             "crest": "https://crests.football-data.org/saudi_arabia.svg"
           },
-          "playedGames": 2,
+          "playedGames": 3,
           "form": null,
           "won": 0,
-          "draw": 1,
+          "draw": 2,
           "lost": 1,
-          "points": 1,
+          "points": 2,
           "goalsFor": 1,
           "goalsAgainst": 5,
           "goalDifference": -4

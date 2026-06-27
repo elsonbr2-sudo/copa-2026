@@ -4101,11 +4101,11 @@
       },
       "id": 537373,
       "utcDate": "2026-06-27T00:00:00Z",
-      "status": "LIVE",
+      "status": "FINISHED",
       "matchday": 3,
       "stage": "GROUP_STAGE",
       "group": "GROUP_H",
-      "lastUpdated": "2026-06-27T00:13:29Z",
+      "lastUpdated": "2026-06-27T02:07:59Z",
       "homeTeam": {
         "id": 758,
         "name": "Uruguay",
@@ -4121,15 +4121,15 @@
         "crest": "https://crests.football-data.org/760.svg"
       },
       "score": {
-        "winner": "DRAW",
+        "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
           "home": 0,
-          "away": 0
+          "away": 1
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 1
         }
       },
       "odds": {
@@ -4167,11 +4167,11 @@
       },
       "id": 537374,
       "utcDate": "2026-06-27T00:00:00Z",
-      "status": "LIVE",
+      "status": "FINISHED",
       "matchday": 3,
       "stage": "GROUP_STAGE",
       "group": "GROUP_H",
-      "lastUpdated": "2026-06-27T00:12:55Z",
+      "lastUpdated": "2026-06-27T02:09:26Z",
       "homeTeam": {
         "id": 1930,
         "name": "Cape Verde Islands",
@@ -4194,8 +4194,8 @@
           "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         }
       },
       "odds": {
@@ -4233,11 +4233,11 @@
       },
       "id": 537367,
       "utcDate": "2026-06-27T03:00:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "matchday": 3,
       "stage": "GROUP_STAGE",
       "group": "GROUP_G",
-      "lastUpdated": "2026-06-26T07:48:25Z",
+      "lastUpdated": "2026-06-27T04:28:53Z",
       "homeTeam": {
         "id": 783,
         "name": "New Zealand",
@@ -4253,21 +4253,28 @@
         "crest": "https://crests.football-data.org/805.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 2
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 1
         }
       },
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": []
+      "referees": [
+        {
+          "id": 129250,
+          "name": "Adham Makhadmeh",
+          "type": "REFEREE",
+          "nationality": "Jordan"
+        }
+      ]
     },
     {
       "area": {
@@ -4292,11 +4299,11 @@
       },
       "id": 537368,
       "utcDate": "2026-06-27T03:00:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "matchday": 3,
       "stage": "GROUP_STAGE",
       "group": "GROUP_G",
-      "lastUpdated": "2026-06-26T07:48:25Z",
+      "lastUpdated": "2026-06-27T04:29:15Z",
       "homeTeam": {
         "id": 825,
         "name": "Egypt",
@@ -4312,21 +4319,28 @@
         "crest": "https://crests.football-data.org/iran.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 1
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 1
         }
       },
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": []
+      "referees": [
+        {
+          "id": 43888,
+          "name": "Szymon Marciniak",
+          "type": "REFEREE",
+          "nationality": "Poland"
+        }
+      ]
     },
     {
       "area": {

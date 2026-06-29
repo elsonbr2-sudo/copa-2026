@@ -4897,7 +4897,7 @@
       "matchday": null,
       "stage": "LAST_32",
       "group": null,
-      "lastUpdated": "2026-06-29T20:50:14Z",
+      "lastUpdated": "2026-06-29T22:12:11Z",
       "homeTeam": {
         "id": 759,
         "name": "Germany",
@@ -4916,12 +4916,12 @@
         "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 0,
-          "away": 0
+          "home": 1,
+          "away": 1
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 1
         }
       },
       "odds": {

@@ -4893,11 +4893,11 @@
       },
       "id": 537415,
       "utcDate": "2026-06-29T20:30:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "matchday": null,
       "stage": "LAST_32",
       "group": null,
-      "lastUpdated": "2026-06-29T23:28:21Z",
+      "lastUpdated": "2026-06-30T00:27:13Z",
       "homeTeam": {
         "id": 759,
         "name": "Germany",
@@ -4917,7 +4917,7 @@
         "duration": "PENALTY_SHOOTOUT",
         "fullTime": {
           "home": 4,
-          "away": 4
+          "away": 5
         },
         "halfTime": {
           "home": 0,
@@ -4932,8 +4932,8 @@
           "away": 0
         },
         "penalties": {
-          "home": 3,
-          "away": 3
+          "home": 4,
+          "away": 4
         }
       },
       "odds": {
@@ -4971,11 +4971,11 @@
       },
       "id": 537418,
       "utcDate": "2026-06-30T01:00:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "matchday": null,
       "stage": "LAST_32",
       "group": null,
-      "lastUpdated": "2026-06-29T05:20:12Z",
+      "lastUpdated": "2026-06-30T01:33:10Z",
       "homeTeam": {
         "id": 8601,
         "name": "Netherlands",
@@ -4991,11 +4991,11 @@
         "crest": "https://crests.football-data.org/morocco.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         },
         "halfTime": {
           "home": null,

@@ -5247,11 +5247,11 @@
       },
       "id": 537426,
       "utcDate": "2026-07-01T16:00:00Z",
-      "status": "LIVE",
+      "status": "FINISHED",
       "matchday": null,
       "stage": "LAST_32",
       "group": null,
-      "lastUpdated": "2026-07-01T16:06:43Z",
+      "lastUpdated": "2026-07-01T18:06:21Z",
       "homeTeam": {
         "id": 770,
         "name": "England",
@@ -5267,15 +5267,15 @@
         "crest": "https://crests.football-data.org/congo_dr.svg"
       },
       "score": {
-        "winner": "DRAW",
+        "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 0,
-          "away": 0
+          "home": 2,
+          "away": 1
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 1
         }
       },
       "odds": {
@@ -5347,7 +5347,14 @@
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": []
+      "referees": [
+        {
+          "id": 190002,
+          "name": "Said Martinez",
+          "type": "REFEREE",
+          "nationality": "Honduras"
+        }
+      ]
     },
     {
       "area": {

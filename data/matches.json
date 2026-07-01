@@ -5317,7 +5317,7 @@
       "matchday": null,
       "stage": "LAST_32",
       "group": null,
-      "lastUpdated": "2026-07-01T20:18:29Z",
+      "lastUpdated": "2026-07-01T21:55:28Z",
       "homeTeam": {
         "id": 805,
         "name": "Belgium",
@@ -5333,15 +5333,15 @@
         "crest": "https://crests.football-data.org/senegal.svg"
       },
       "score": {
-        "winner": "DRAW",
+        "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 0,
-          "away": 0
+          "home": 1,
+          "away": 2
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 1
         }
       },
       "odds": {

@@ -5313,11 +5313,11 @@
       },
       "id": 537422,
       "utcDate": "2026-07-01T20:00:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "matchday": null,
       "stage": "LAST_32",
       "group": null,
-      "lastUpdated": "2026-07-01T21:55:28Z",
+      "lastUpdated": "2026-07-01T22:54:56Z",
       "homeTeam": {
         "id": 805,
         "name": "Belgium",
@@ -5333,15 +5333,23 @@
         "crest": "https://crests.football-data.org/senegal.svg"
       },
       "score": {
-        "winner": "AWAY_TEAM",
+        "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 1,
+          "home": 3,
           "away": 2
         },
         "halfTime": {
           "home": 0,
           "away": 1
+        },
+        "regularTime": {
+          "home": null,
+          "away": null
+        },
+        "extraTime": {
+          "home": 1,
+          "away": 0
         }
       },
       "odds": {
@@ -5413,7 +5421,14 @@
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": []
+      "referees": [
+        {
+          "id": 11260,
+          "name": "Raphael Claus",
+          "type": "REFEREE",
+          "nationality": "Brazil"
+        }
+      ]
     },
     {
       "area": {

@@ -5053,7 +5053,7 @@
       "matchday": null,
       "stage": "LAST_32",
       "group": null,
-      "lastUpdated": "2026-07-01T08:25:01Z",
+      "lastUpdated": "2026-07-01T08:25:00Z",
       "homeTeam": {
         "id": 1935,
         "name": "Ivory Coast",
@@ -5317,7 +5317,7 @@
       "matchday": null,
       "stage": "LAST_32",
       "group": null,
-      "lastUpdated": "2026-07-01T22:54:56Z",
+      "lastUpdated": "2026-07-01T23:03:12Z",
       "homeTeam": {
         "id": 805,
         "name": "Belgium",
@@ -5334,7 +5334,7 @@
       },
       "score": {
         "winner": "HOME_TEAM",
-        "duration": "REGULAR",
+        "duration": "EXTRA_TIME",
         "fullTime": {
           "home": 3,
           "away": 2
@@ -5387,11 +5387,11 @@
       },
       "id": 537421,
       "utcDate": "2026-07-02T00:00:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "matchday": null,
       "stage": "LAST_32",
       "group": null,
-      "lastUpdated": "2026-06-30T15:20:13Z",
+      "lastUpdated": "2026-07-02T01:33:09Z",
       "homeTeam": {
         "id": 771,
         "name": "United States",
@@ -5407,15 +5407,15 @@
         "crest": "https://crests.football-data.org/bosnia.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 0
         }
       },
       "odds": {

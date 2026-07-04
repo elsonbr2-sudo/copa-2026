@@ -5869,11 +5869,11 @@
       },
       "id": 537376,
       "utcDate": "2026-07-04T17:00:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "matchday": null,
       "stage": "LAST_16",
       "group": null,
-      "lastUpdated": "2026-07-04T18:54:45Z",
+      "lastUpdated": "2026-07-04T19:09:21Z",
       "homeTeam": {
         "id": 828,
         "name": "Canada",
@@ -5893,7 +5893,7 @@
         "duration": "REGULAR",
         "fullTime": {
           "home": 0,
-          "away": 2
+          "away": 3
         },
         "halfTime": {
           "home": 0,
@@ -5969,7 +5969,14 @@
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": []
+      "referees": [
+        {
+          "id": 236055,
+          "name": "Il'giz Tantashev",
+          "type": "REFEREE",
+          "nationality": "Uzbekistan"
+        }
+      ]
     },
     {
       "area": {

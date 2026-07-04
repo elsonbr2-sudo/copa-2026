@@ -5939,7 +5939,7 @@
       "matchday": null,
       "stage": "LAST_16",
       "group": null,
-      "lastUpdated": "2026-07-04T21:15:47Z",
+      "lastUpdated": "2026-07-04T22:15:06Z",
       "homeTeam": {
         "id": 761,
         "name": "Paraguay",
@@ -5962,8 +5962,8 @@
           "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         }
       },
       "odds": {

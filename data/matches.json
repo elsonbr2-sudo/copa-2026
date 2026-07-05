@@ -6001,11 +6001,11 @@
       },
       "id": 537377,
       "utcDate": "2026-07-05T20:00:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "matchday": null,
       "stage": "LAST_16",
       "group": null,
-      "lastUpdated": "2026-07-05T05:20:12Z",
+      "lastUpdated": "2026-07-05T20:36:27Z",
       "homeTeam": {
         "id": 764,
         "name": "Brazil",
@@ -6021,11 +6021,11 @@
         "crest": "https://crests.football-data.org/813.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         },
         "halfTime": {
           "home": null,

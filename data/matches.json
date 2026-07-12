@@ -6615,11 +6615,11 @@
       },
       "id": 537386,
       "utcDate": "2026-07-12T01:00:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "matchday": null,
       "stage": "QUARTER_FINALS",
       "group": null,
-      "lastUpdated": "2026-07-12T01:07:33Z",
+      "lastUpdated": "2026-07-12T03:51:58Z",
       "homeTeam": {
         "id": 762,
         "name": "Argentina",
@@ -6635,15 +6635,23 @@
         "crest": "https://crests.football-data.org/788.svg"
       },
       "score": {
-        "winner": "DRAW",
-        "duration": "REGULAR",
+        "winner": "HOME_TEAM",
+        "duration": "EXTRA_TIME",
         "fullTime": {
-          "home": 0,
-          "away": 0
+          "home": 3,
+          "away": 1
         },
         "halfTime": {
+          "home": 1,
+          "away": 0
+        },
+        "regularTime": {
           "home": null,
           "away": null
+        },
+        "extraTime": {
+          "home": 2,
+          "away": 0
         }
       },
       "odds": {

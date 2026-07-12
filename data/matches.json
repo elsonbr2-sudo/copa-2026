@@ -6541,11 +6541,11 @@
       },
       "id": 537385,
       "utcDate": "2026-07-11T21:00:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "matchday": null,
       "stage": "QUARTER_FINALS",
       "group": null,
-      "lastUpdated": "2026-07-11T23:28:18Z",
+      "lastUpdated": "2026-07-11T23:53:31Z",
       "homeTeam": {
         "id": 8872,
         "name": "Norway",
@@ -6615,11 +6615,11 @@
       },
       "id": 537386,
       "utcDate": "2026-07-12T01:00:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "matchday": null,
       "stage": "QUARTER_FINALS",
       "group": null,
-      "lastUpdated": "2026-07-11T05:20:09Z",
+      "lastUpdated": "2026-07-12T01:07:33Z",
       "homeTeam": {
         "id": 762,
         "name": "Argentina",
@@ -6635,11 +6635,11 @@
         "crest": "https://crests.football-data.org/788.svg"
       },
       "score": {
-        "winner": null,
+        "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         },
         "halfTime": {
           "home": null,

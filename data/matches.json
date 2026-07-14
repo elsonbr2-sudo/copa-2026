@@ -6689,11 +6689,11 @@
       },
       "id": 537387,
       "utcDate": "2026-07-14T19:00:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "matchday": null,
       "stage": "SEMI_FINALS",
       "group": null,
-      "lastUpdated": "2026-07-14T20:16:00Z",
+      "lastUpdated": "2026-07-14T21:04:16Z",
       "homeTeam": {
         "id": 773,
         "name": "France",
@@ -6713,7 +6713,7 @@
         "duration": "REGULAR",
         "fullTime": {
           "home": 0,
-          "away": 1
+          "away": 2
         },
         "halfTime": {
           "home": 0,

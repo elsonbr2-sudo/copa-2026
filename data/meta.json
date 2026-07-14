@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-14T20:16:17.782Z",
+  "fetchedAt": "2026-07-14T21:26:26.588Z",
   "competition": {
     "id": 2000,
     "name": "FIFA World Cup",
@@ -15,5 +15,5 @@
     "winner": null
   },
   "totalMatches": 104,
-  "matchesPlayed": 100
+  "matchesPlayed": 101
 }

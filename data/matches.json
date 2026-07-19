@@ -6891,7 +6891,7 @@
       "matchday": null,
       "stage": "FINAL",
       "group": null,
-      "lastUpdated": "2026-07-19T19:36:00Z",
+      "lastUpdated": "2026-07-19T20:27:33Z",
       "homeTeam": {
         "id": 760,
         "name": "Spain",
@@ -6914,8 +6914,8 @@
           "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         }
       },
       "odds": {
